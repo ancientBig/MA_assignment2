@@ -37,7 +37,7 @@ CREATE TABLE students(
    teacher_id int not null,
    crs_name varchar(355) not null,
    crs_duration int  not null,
-   crs_cost int double null,
+   crs_cost  double not null,
 
     FOREIGN KEY (teacher_id) REFERENCES teachers (teacher_id)
 
@@ -45,8 +45,8 @@ CREATE TABLE students(
 
 CREATE TABLE Enrollment
 (
-    student_id int not null  primary key,
-    course_id int not null primary key,
+    student_id int not null,
+    course_id int not null,
 
     FOREIGN KEY (student_id) REFERENCES students (student_id),
     FOREIGN KEY (course_id) REFERENCES courses (course_id)
@@ -60,8 +60,7 @@ CREATE TABLE Modules
    module_marks double,
    course_id int not null,
 
-    FOREIGN KEY (course_id) REFERENCES courses (course_id),
-
+    FOREIGN KEY (course_id) REFERENCES courses (course_id)
 );
    
 
